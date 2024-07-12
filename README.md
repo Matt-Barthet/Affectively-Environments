@@ -5,7 +5,7 @@ Clone the repository to your local storage. `Builds` are available separately, d
 
 Create conda environment
 ```bash
-conda create -n affect-envs python==3.9
+conda create -n affect-envs python=3.9
 ```
 Activate the environment
 ```bash
