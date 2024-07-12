@@ -1,7 +1,7 @@
 # Affectively Environments
 
 # Building the project from source
-Clone the repository to your local storage. `Builds` are available separately, download them [here](https://drive.google.com/file/d/1hoNjlVUj9Yh7vacSjnwM7_iaXFChlK1d/view?usp=sharing).
+Clone the repository to your local storage. `Builds` are available separately, download them [here](https://drive.google.com/file/d/1hoNjlVUj9Yh7vacSjnwM7_iaXFChlK1d/view?usp=sharing). Unzip the archive and move the `Builds` folder to the root directory of this repository. 
 
 Create conda environment
 ```bash
@@ -32,6 +32,3 @@ Then simply run
 sh build_docs.sh
 ```
 to update the `index.html` page.
-
-# Check out examples
-_TODO :)_
