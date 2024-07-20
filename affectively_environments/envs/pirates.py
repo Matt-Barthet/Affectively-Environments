@@ -22,7 +22,7 @@ class PiratesEnvironment(BaseEnvironment):
 		                 path=path,
 		                 args=["-gridWidth", f"{self.gridWidth}", "-gridHeight", f"{self.gridHeight}",
 		                       "-elementSize",
-		                       f"{self.elementSize}"], capture_fps=60, time_scale=1, weight=weight, game='Pirates',
+		                       f"{self.elementSize}"], capture_fps=60, time_scale=5, weight=weight, game='Pirates',
 		                 logging=logging)
 	
 	def calculate_reward(self, state, position):

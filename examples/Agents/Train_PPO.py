@@ -18,7 +18,15 @@ if __name__ == "__main__":
         weight = float(sys.argv[2])
         game = sys.argv[3]
 
-    env = HeistEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="./Builds/Heist.app")
+    if game == "Heist":
+        env = HeistEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="../../Builds/MS_Heist/Top-Down Shooter.exe")
+    elif game == "Solid":
+
+        env = SolidEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="../../Builds/MS_SolidRally/racing.exe")
+    elif game == "Pirates":
+
+        env = PiratesEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="../../Builds/MS_Pirates/Platform.exe")
+
     sideChannel = env.customSideChannel
     env.targetSignal = np.ones
 
