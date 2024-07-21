@@ -69,6 +69,7 @@ class HeistEnvironment(BaseEnvironment):
 
     def reset(self, **kwargs):
         state = super().reset()
+        print(state)
         self.cumulative_reward = 0
         self.previous_score = 0
         self.position_dict.clear()

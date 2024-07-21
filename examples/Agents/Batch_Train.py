@@ -4,7 +4,7 @@ import os
 directory = os.path.dirname(os.path.realpath(__file__))
 
 # for cluster in [0, 1, 2, 3]:
-for game in ['Heist', 'Pirates', 'Solid']:
+for game in ['Heist']:
     for run in range(1, 2):
         for weight in [0, 0.5, 1]:
             # for target_name, target_signal in [("Minimize", "np.zeros"), ("Maximize", "np.ones"), ("imitate", "imitate")]:
