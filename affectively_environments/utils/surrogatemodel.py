@@ -91,8 +91,8 @@ class KNNSurrogateModel:
 		data = data[data.columns[~data.columns.str.startswith("Cluster")]]
 		data = data[data.columns[~data.columns.str.startswith("Time_Index")]]
 		data = data[data.columns[~data.columns.str.contains("arousal")]]
-		if self.game != "Heist":
-			data = data[data.columns[~data.columns.str.contains("Score")]]
+		# if self.game != "Heist":
+		data = data[data.columns[~data.columns.str.contains("Score")]]
 		return data, arousals
 	
 	def load_data(self):

@@ -25,7 +25,7 @@ class HeistEnvironment(BaseEnvironment):
                                "-cellSize", f"{self.elementSize}"], capture_fps=15, time_scale=1, weight=weight,
                          game='Heist', logging=logging)
 
-    def calculate_reward(self, state, position, action):
+    def calculate_reward(self, state, position):
 
         self.current_reward = self.current_score - self.previous_score
 
@@ -90,14 +90,22 @@ class HeistEnvironment(BaseEnvironment):
         ]
 
         # print(transformed_action[2])
-        state, env_score, arousal, d, info = super().step(transformed_action)
+        while True:
+            try:
+                state, env_score, arousal, d, info = super().step(transformed_action)
+                break
+            except:
+                print("We had an error, trying to reset and start again?")
+                self.reset()
+                
+
         position = state[1][:3]
 
         self.current_health = state[1][4]
         self.current_ammo = state[1][5]
 
         state = self.construct_state(state[1], np.asarray(state[0]))
-        self.calculate_reward(state, position, transformed_action)
+        self.calculate_reward(state, position)
         self.cumulative_reward += self.current_reward
         self.best_reward = np.max([self.best_reward, self.current_reward])
         self.reset_condition()
