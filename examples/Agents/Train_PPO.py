@@ -21,10 +21,8 @@ if __name__ == "__main__":
     if game == "Heist":
         env = HeistEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="../../Builds/MS_Heist/Top-Down Shooter.exe")
     elif game == "Solid":
-
         env = SolidEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="../../Builds/MS_SolidRally/racing.exe")
     elif game == "Pirates":
-
         env = PiratesEnvironment(id_number=run, weight=weight, graphics=True, logging=True, path="../../Builds/MS_Pirates/Platform.exe")
 
     sideChannel = env.customSideChannel
@@ -37,6 +35,6 @@ if __name__ == "__main__":
     else:
         label = 'arousal'
 
-    model = PPO("MlpPolicy", env=env, tensorboard_log="../Tensorboard", device='cpu')
+    model = PPO("MlpPolicy", env=env, device='cpu')
     model.learn(total_timesteps=2000000, progress_bar=True)
-    model.save(f"ppo_solid_{label}_{run}")
+    model.save(f"ppo_{game}_{label}_{run}")

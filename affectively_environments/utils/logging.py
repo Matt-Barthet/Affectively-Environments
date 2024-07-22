@@ -6,12 +6,12 @@ import shutil
 
 
 def backup(log_dir):
-    if not os.path.exists("../Tensorboard/Backups"):
-        os.mkdir("../Tensorboard/Backups")
+    if not os.path.exists("./Tensorboard/Backups"):
+        os.mkdir("./Tensorboard/Backups")
     if os.path.exists(log_dir):
         counter = 1
         while True:
-            filename = f"../Tensorboard/Backups/{log_dir.split('/')[-1]}_{counter}"
+            filename = f"./Tensorboard/Backups/{log_dir.split('/')[-1]}_{counter}"
             if not os.path.exists(filename):
                 shutil.move(log_dir, f"{filename}")
                 break
